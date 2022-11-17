@@ -16,14 +16,14 @@ what_is_year_now.py::test_error PASSED                                          
 
 Test coverage:
 
-(Venv_study) D:\Avito\Python\ДЗ\hw5_tests\issue_5>python -m pytest -q what_is_year_now.py --cov                     
+(Venv_study) D:\Avito\Python\ДЗ\hw5_tests\issue_5>python -m pytest -q what_is_year_now.py --cov
 ...                                                                                                                                          [100%]
 
 ---------- coverage: platform win32, python 3.10.8-final-0 -----------
 Name                  Stmts   Miss  Cover
 -----------------------------------------
-what_is_year_now.py      38      0   100%
+what_is_year_now.py      35      0   100%
 -----------------------------------------
-TOTAL                    38      0   100%
+TOTAL                    35      0   100%
 
-3 passed in 0.33s
+3 passed in 0.19s

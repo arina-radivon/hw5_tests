@@ -1,6 +1,7 @@
 import urllib.request
 import json
 import pytest
+import io
 from unittest.mock import patch
 
 API_URL = 'http://worldclockapi.com/api/json/utc/now'
@@ -14,39 +15,29 @@ DMY_SEP_INDEX = 5
 DMY_YEAR_SLICE = slice(DMY_SEP_INDEX + 1, DMY_SEP_INDEX + 5)
 
 
-"""
-I've tried to mock only one object as string but it doesn't work.
-Thats why I mocked 2 objects further.
-
 def test_dash():
-    # mock_tmp.return_value.__enter__.return_value.name = mytmpname
     with patch('urllib.request.urlopen') as response:
-        response.return_value.__enter__.return_value =
-                                    {'currentDateTime': '2022-03-01'}
+        response.return_value.__enter__.return_value = io.StringIO(
+                                        '{"currentDateTime": "2022-03-01"}'
+                                                                  )
         assert what_is_year_now() == 2022
-"""
-
-
-def test_dash():
-    with patch('urllib.request.urlopen'):
-        with patch('json.load') as json_load:
-            json_load.return_value = {'currentDateTime': '2022-03-01'}
-            assert what_is_year_now() == 2022
 
 
 def test_dots():
-    with patch('urllib.request.urlopen'):
-        with patch('json.load') as json_load:
-            json_load.return_value = {'currentDateTime': '01.03.2019'}
-            assert what_is_year_now() == 2019
+    with patch('urllib.request.urlopen') as response:
+        response.return_value.__enter__.return_value = io.StringIO(
+                                        '{"currentDateTime": "01.03.2022"}'
+                                                                  )
+        assert what_is_year_now() == 2022
 
 
 def test_error():
-    with patch('urllib.request.urlopen'):
-        with patch('json.load') as json_load:
-            json_load.return_value = {'currentDateTime': '2022.03.01'}
-            with pytest.raises(ValueError):
-                what_is_year_now()
+    with patch('urllib.request.urlopen') as response:
+        response.return_value.__enter__.return_value = io.StringIO(
+                                        '{"currentDateTime": "2022.03.01"}'
+                                                                  )
+        with pytest.raises(ValueError):
+            what_is_year_now()
 
 
 def what_is_year_now() -> int:
