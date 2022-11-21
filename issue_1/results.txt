@@ -1,0 +1,51 @@
+FIRST:
+
+(Venv_study) D:\Avito\Python\ДЗ\hw5_tests\issue_1>python -m doctest -o NORMALIZE_WHITESPACE -v convert_morse.py
+
+Trying:
+    encode('SOS')
+Expecting:
+    '... --- ...'
+ok
+Trying:
+    encode('WHAT DOES THE FOX SAY?')
+Expecting:
+    '.-- .... .- -   -.. --- . ...   - .... .
+    ..-. --- -..-     ... .- -.-- ..--..'
+ok
+Trying:
+    encode('*')
+Expecting:
+    Traceback (most recent call last):
+    KeyError: '*'
+ok
+Trying:
+    encode('ABCDEFGHIJKLMNOPQRSTUVWXYZ')  # doctest: +ELLIPSIS
+Expecting:
+    '.- -... -.-. ... -..- -.-- --..'
+ok
+1 items had no tests:
+    convert_morse
+1 items passed all tests:
+   4 tests in convert_morse.encode
+4 tests in 2 items.
+4 passed and 0 failed.
+Test passed.
+
+
+SECOND:
+
+(Venv_study) D:\Avito\Python\ДЗ\hw5_tests\issue_1>python -m doctest convert_morse.py                            
+**********************************************************************
+File "D:\Avito\Python\ДЗ\hw5_tests\issue_1\convert_morse.py", line 35, in convert_morse.encode
+Failed example:
+    encode('WHAT DOES THE FOX SAY?')
+Expected:
+    '.-- .... .- -   -.. --- . ...   - .... .
+    ..-. --- -..-     ... .- -.-- ..--..'
+Got:
+    '.-- .... .- -   -.. --- . ...   - .... .   ..-. --- -..-   ... .- -.-- ..--..'
+**********************************************************************
+1 items had failures:
+   1 of   4 in convert_morse.encode
+***Test Failed*** 1 failures.

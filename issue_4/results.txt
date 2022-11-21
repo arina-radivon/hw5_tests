@@ -1,0 +1,14 @@
+(Venv_study) D:\Avito\Python\ДЗ\hw5_tests\issue_4>python -m pytest -v one_hot_encoding.py
+
+======================================================================= test session starts ========================================================================
+platform win32 -- Python 3.10.8, pytest-7.2.0, pluggy-1.0.0 -- D:\Programs\Venv_study\Scripts\python.exe
+cachedir: .pytest_cache
+rootdir: D:\Avito\Python\ДЗ\hw5_tests\issue_4
+collected 4 items                                                                                                                                                    
+
+one_hot_encoding.py::test_cities PASSED                                                                                                                       [ 25%]
+one_hot_encoding.py::test_exception PASSED                                                                                                                    [ 50%] 
+one_hot_encoding.py::test_empty PASSED                                                                                                                        [ 75%] 
+one_hot_encoding.py::test_notin PASSED                                                                                                                        [100%] 
+
+======================================================================== 4 passed in 0.03s ========================================================================= 

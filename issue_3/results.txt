@@ -1,0 +1,15 @@
+(Venv_study) D:\Avito\Python\ДЗ\hw5_tests\issue_3>python -m unittest -v one_hot_encoding.py
+
+test_cities (one_hot_encoding.TestFT)
+Test on simple example ... ok
+test_empty (one_hot_encoding.TestFT)
+Test empty input ... ok
+test_exception (one_hot_encoding.TestFT)
+Test not itarable object ... ok
+test_notin (one_hot_encoding.TestFT)
+Test on same part in another object ... ok
+
+----------------------------------------------------------------------
+Ran 4 tests in 0.002s
+
+OK

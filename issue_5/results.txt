@@ -1,0 +1,29 @@
+Ran the code:
+
+(Venv_study) D:\Avito\Python\ДЗ\hw5_tests\issue_5>python -m pytest -v what_is_year_now.py
+
+=============================================================== test session starts ===============================================================
+platform win32 -- Python 3.10.8, pytest-7.2.0, pluggy-1.0.0 -- D:\Programs\Venv_study\Scripts\python.exe
+cachedir: .pytest_cache
+rootdir: D:\Avito\Python\ДЗ\hw5_tests\issue_5
+collected 3 items
+
+what_is_year_now.py::test_dash PASSED                                                                                                        [ 33%] 
+what_is_year_now.py::test_dots PASSED                                                                                                        [ 66%]
+what_is_year_now.py::test_error PASSED                                                                                                       [100%] 
+
+================================================================ 3 passed in 0.20s ================================================================ 
+
+Test coverage:
+
+(Venv_study) D:\Avito\Python\ДЗ\hw5_tests\issue_5>python -m pytest -q what_is_year_now.py --cov
+...                                                                                                                                          [100%]
+
+---------- coverage: platform win32, python 3.10.8-final-0 -----------
+Name                  Stmts   Miss  Cover
+-----------------------------------------
+what_is_year_now.py      35      0   100%
+-----------------------------------------
+TOTAL                    35      0   100%
+
+3 passed in 0.19s
